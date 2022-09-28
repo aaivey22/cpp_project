@@ -1,13 +1,15 @@
 #include "student.h"
+using namespace std;
 
-Student::Student(std::string ID, std::string fName, std::string lName, std::string email, std::string program, int age, int numdays[3]) { //constructor
-	SetID(ID);
-	SetFirstName(fName);
-	SetLastName(lName);
-	SetstudentEmail(email);
-	SetstudentProgram(program);
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram)
+{ //constructor
+	SetID(studentID);
+	SetFirstName(firstName);
+	SetLastName(lastName);
+	SetstudentEmail(emailAddress);
+	SetstudentProgram(degreeProgram);
 	SetstudentAge(age);
-	SetDays(numdays[0], numdays[1], numdays[2]);
+	SetDays(daysInCourse1, daysInCourse2, daysInCourse3);
 };
 Student::~Student() {
 
@@ -57,10 +59,10 @@ void Student::printEmail() {
 };
 
 
-void Student::SetstudentProgram(std::string program) {
+void Student::SetstudentProgram(DegreeProgram program) {
 	studentProgram = program;
 };
-std::string Student::GetstudentProgram() {
+DegreeProgram Student::GetstudentProgram() {
 	return studentProgram;
 };
 void Student::printProgram() {
@@ -80,15 +82,17 @@ void Student::printAge() {
 
 
 void Student::SetDays(int days1, int days2, int days3) {
-	numDays[0]=days1;
-	numDays[1]=days2;
-	numDays[2]=days3;
+
+	int daysInCourse1 = days1;
+	int daysInCourse2 = days2;
+	int daysInCourse3 = days3;
+
 
 };
 void Student::GetDays(int& day1, int& day2, int& day3) {
-	day1 = this->numDays[0]; // arrows are used with pointers
-	day2 = this->numDays[1];
-	day3 = this->numDays[2];
+	day1 = daysInCourse1; // arrows are used with pointers
+	day2 = daysInCourse2;
+	day3 = daysInCourse3;
 
 };
 void Student::printDays() {
