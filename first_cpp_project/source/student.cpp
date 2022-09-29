@@ -22,7 +22,7 @@ std::string Student::GetID() {
 	return studentID;
 };
 void Student::printID() {
-	std::cout << this->GetID() << std::endl;
+	std::cout << this->GetID();
 };
 
 
@@ -33,7 +33,7 @@ std::string Student::GetFirstName() {
 	return firstName;
 };
 void Student::printFName() {
-	std::cout << this->GetFirstName() << std::endl;
+	std::cout << this->GetFirstName();
 };
 
 
@@ -44,7 +44,7 @@ std::string Student::GetLastName() {
 	return lastName;
 };
 void Student::printLName() {
-	std::cout << this->GetLastName() << std::endl;
+	std::cout << this->GetLastName();
 };
 
 
@@ -55,7 +55,7 @@ std::string Student::GetstudentEmail() {
 	return studentEmail;
 };
 void Student::printEmail() {
-	std::cout << this->GetstudentEmail() << std::endl;
+	std::cout << this->GetstudentEmail();
 };
 
 
@@ -66,7 +66,10 @@ DegreeProgram Student::GetstudentProgram() {
 	return studentProgram;
 };
 void Student::printProgram() {
-	std::cout << this->GetstudentProgram() << std::endl;
+	DegreeProgram program= this->GetstudentProgram();
+	if (program == SECURITY) cout << "SECURITY";
+	if (program == SOFTWARE) cout << "SOFTWARE";
+	if (program == NETWORK) cout << "NETWORK";
 };
 
 
@@ -77,7 +80,7 @@ int Student::GetstudentAge() {
 	return studentAge;
 };
 void Student::printAge() {
-	std::cout << this->GetstudentAge() << std::endl;
+	std::cout << this->GetstudentAge();
 };
 
 
@@ -100,5 +103,5 @@ void Student::printDays() {
 	int Day2;
 	int Day3;
 	this->GetDays(Day1, Day2, Day3);
-	std::cout << Day1 << ", " << Day2 <<", "<< Day3<< std::endl;
+	std::cout <<"{"<< Day1 << ", " << Day2 <<", "<< Day3<<"}";
 };

@@ -55,8 +55,27 @@ void Roster::parse(const string studentData) {
 void Roster::remove(string studentID){};
 void Roster::printAll(){
 	std::cout << "Displaying all students:\n" << std::endl;
+	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
+		classRosterArray[i]->printID();
+		std::cout << "\t";
 
-	classRosterArray[0]->printEmail();
+		classRosterArray[i]->printFName();
+		std::cout << "\t";
+
+		classRosterArray[i]->printLName();
+		std::cout << "\t";
+
+		classRosterArray[i]->printAge();
+		std::cout << "\t";
+
+		classRosterArray[i]->printDays();
+		std::cout << "\t";
+
+		classRosterArray[i]->printProgram();
+
+		std::cout << std::endl;
+
+	};
 };
 
 void Roster::printAverageDaysInCourse(string studentID){};
