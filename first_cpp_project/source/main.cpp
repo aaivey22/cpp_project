@@ -7,7 +7,7 @@
 
 using namespace std;
 
-DegreeProgram conversion(const string& str);
+//DegreeProgram conversion(const string& str);
 //std::vector<string> parseData(const string studentData[]);
 
 int main() {
@@ -26,9 +26,13 @@ int main() {
 		"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY", 
 		"A5,Angela,Ivey,aivey9wgu.edu,34,15,20,7,SOFTWARE" 
 	};
-	Roster test;
-	
-	
+	Roster classRoster;
+	for (int i = 0; i < sizeof(studentData) / sizeof(studentData[0]); i++) {
+		classRoster.parse(studentData[i]);
+
+	};
+	classRoster.printAll();
+	/*
 	vector<string> listOfWords;
 	for (int x = 0; x < sizeof(studentData) / sizeof(studentData[0]); x++)
 	{
@@ -79,12 +83,13 @@ int main() {
 	}
 	//std::string name= listOfStudents[0]->GetFirstName();
 	//std::cout << "Student Name: " << name << std::endl;
-
+	*/
 	return 0;
 }
-
+/*
 DegreeProgram conversion(const string& str) {
 	if (str == "SECURITY") return SECURITY;
 	if (str == "NETWORK") return NETWORK;
 	if (str == "SOFTWARE") return SOFTWARE;
 }
+*/
