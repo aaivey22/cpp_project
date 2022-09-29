@@ -1,22 +1,12 @@
 #include <iostream>
 #include "student.h"
-#include <string>
-#include <vector>
 #include "degree.h"
 #include "roster.h"
 
 using namespace std;
 
-//DegreeProgram conversion(const string& str);
-//std::vector<string> parseData(const string studentData[]);
-
 int main() {
-	//DegreeProgram degree;
-	//degree = SECURITY;
-	//Student Test("A1", "Reishi", "Ivey", "rivey@email.com", 2000, 0, 2, 5, degree); //constructor
-	//Test.printDays();
-	//std::string Pumpkin=Test.GetFirstName();
-	//std::cout << Pumpkin << std::endl;
+	std::cout << "C867-Scripting & Programming: Applications\nLanguage: C++\nStudent ID: 001044088\nName: Angela Ivey\n" << std::endl;
 
 	const string studentData[] =
 	{

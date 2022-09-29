@@ -54,6 +54,8 @@ void Roster::parse(const string studentData) {
 
 void Roster::remove(string studentID){};
 void Roster::printAll(){
+	std::cout << "Displaying all students:\n" << std::endl;
+
 	classRosterArray[0]->printEmail();
 };
 
