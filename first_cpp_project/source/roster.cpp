@@ -78,7 +78,31 @@ void Roster::printAll(){
 };
 
 void Roster::printAverageDaysInCourse(string studentID){};
-void Roster::printInvalidEmails(){};
+
+void Roster::printInvalidEmails(){
+	std::cout << "\nDisplaying invalid emails:\n\n";
+
+	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
+		bool invalid1 = true;
+		bool invalid2 = true;
+
+		for (char letter : classRosterArray[i]->GetstudentEmail()) {
+			if (letter == ' ') {
+				classRosterArray[i]->printEmail();
+				std::cout << std::endl;
+			} if (letter == '@') {
+				invalid1 = false;
+			}if (letter == '.') {
+				invalid2 = false;
+			}
+		}
+		if (invalid1 || invalid2) {
+			classRosterArray[i]->printEmail();
+			std::cout << std::endl;
+		}
+
+	}
+};
 
 DegreeProgram conversion(const string& str) {
 	if (str == "SECURITY") return SECURITY;
