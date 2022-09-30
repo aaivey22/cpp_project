@@ -14,8 +14,10 @@ public:
 	void printAll();
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
-private:
 	class Student* classRosterArray[5];
+
+private:
+
 	int arrayIndex = 0;
 	//class Student student;
 

@@ -77,7 +77,19 @@ void Roster::printAll(){
 	};
 };
 
-void Roster::printAverageDaysInCourse(string studentID){};
+void Roster::printAverageDaysInCourse(string studentID){
+	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
+		if (studentID == classRosterArray[i]->GetID()) {
+			int Day1;
+			int Day2;
+			int Day3;
+			classRosterArray[i]->GetDays(Day1, Day2, Day3);
+			std::cout << "Student ID: "<< classRosterArray[i]->GetID() << ", average days in course is: " << (Day1 + Day2 + Day3) / 3 << std::endl;
+
+		}
+	}
+
+};
 
 void Roster::printInvalidEmails(){
 	std::cout << "\nDisplaying invalid emails:\n\n";
@@ -89,7 +101,7 @@ void Roster::printInvalidEmails(){
 		for (char letter : classRosterArray[i]->GetstudentEmail()) {
 			if (letter == ' ') {
 				classRosterArray[i]->printEmail();
-				std::cout << std::endl;
+				std::cout << " - is invalid." << std::endl;
 			} if (letter == '@') {
 				invalid1 = false;
 			}if (letter == '.') {
@@ -98,7 +110,7 @@ void Roster::printInvalidEmails(){
 		}
 		if (invalid1 || invalid2) {
 			classRosterArray[i]->printEmail();
-			std::cout << std::endl;
+			std::cout << " - is invalid." << std::endl;
 		}
 
 	}
