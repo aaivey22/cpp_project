@@ -10,7 +10,7 @@ Roster::Roster() {};
 Roster::~Roster() {};
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram){
-	classRosterArray[arrayIndex] = new Student(studentID, firstName, lastName, emailAddress, age,daysInCourse1, daysInCourse2, daysInCourse3, degreeprogram);
+	classRosterArray[arrayIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeprogram);
 	++arrayIndex;
 };
 
@@ -35,21 +35,20 @@ void Roster::parse(const string studentData) {
 			}
 		};
 
-	for (int i = 0; i < 1; i++)
-	{
-		DegreeProgram degreeprogram = conversion(listOfWords[(i * 9) + 8]);
-		add(
-			listOfWords[i * 9],
-			listOfWords[(i * 9) + 1],
-			listOfWords[(i * 9) + 2],
-			listOfWords[(i * 9) + 3],
-			std::stoi(listOfWords[(i * 9) + 4]),
-			std::stoi(listOfWords[(i * 9) + 5]),
-			std::stoi(listOfWords[(i * 9) + 6]),
-			std::stoi(listOfWords[(i * 9) + 7]),
-			degreeprogram);
-	}
-
+		for (int i = 0; i < 1; i++)
+		{
+			DegreeProgram degreeprogram = conversion(listOfWords[(i * 9) + 8]);
+			add(
+				listOfWords[i * 9],
+				listOfWords[(i * 9) + 1],
+				listOfWords[(i * 9) + 2],
+				listOfWords[(i * 9) + 3],
+				std::stoi(listOfWords[(i * 9) + 4]),
+				std::stoi(listOfWords[(i * 9) + 5]),
+				std::stoi(listOfWords[(i * 9) + 6]),
+				std::stoi(listOfWords[(i * 9) + 7]),
+				degreeprogram);
+		}
 };
 
 void Roster::remove(string studentID){};

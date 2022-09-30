@@ -85,19 +85,17 @@ void Student::printAge() {
 
 
 void Student::SetDays(int days1, int days2, int days3) {
-
-	int daysInCourse1 = days1;
-	int daysInCourse2 = days2;
-	int daysInCourse3 = days3;
-
-
+	daysInCourse1 = days1;
+	daysInCourse2 = days2;
+	daysInCourse3 = days3;
 };
+
 void Student::GetDays(int& day1, int& day2, int& day3) {
 	day1 = daysInCourse1; // arrows are used with pointers
 	day2 = daysInCourse2;
 	day3 = daysInCourse3;
-
 };
+
 void Student::printDays() {
 	int Day1;
 	int Day2;
