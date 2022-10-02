@@ -14,6 +14,7 @@ public:
 	void printAll();
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
+	void printByDegreeProgram(DegreeProgram degreeProgram);
 	class Student* classRosterArray[5];
 
 private:

@@ -114,6 +114,23 @@ void Roster::printInvalidEmails(){
 		}
 
 	}
+}
+void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
+{
+	string program;
+	if (degreeProgram == SOFTWARE) {
+		program = "SOFTWARE";
+	};
+
+	if (degreeProgram == SECURITY) {
+		program = "SECURITY";
+	};
+
+	if (degreeProgram == NETWORK) {
+		program = "NETWORK";
+	};
+
+	std::cout << "\nShowing students in the degree program: " << program <<endl;
 };
 
 DegreeProgram conversion(const string& str) {
