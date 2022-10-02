@@ -33,7 +33,7 @@ void Roster::parse(const string studentData) {
 				listOfWords.push_back(parsedWord);
 				parsed = "";
 			}
-		};
+		}
 
 		for (int i = 0; i < 1; i++)
 		{
@@ -74,7 +74,7 @@ void Roster::printAll(){
 
 		std::cout << std::endl;
 
-	};
+	}
 };
 
 void Roster::printAverageDaysInCourse(string studentID){
@@ -91,7 +91,7 @@ void Roster::printAverageDaysInCourse(string studentID){
 
 };
 
-void Roster::printInvalidEmails(){
+void Roster::printInvalidEmails() {
 	std::cout << "\nDisplaying invalid emails:\n\n";
 
 	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
@@ -114,7 +114,8 @@ void Roster::printInvalidEmails(){
 		}
 
 	}
-}
+};
+
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
 {
 	string program;
@@ -131,6 +132,31 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
 	};
 
 	std::cout << "\nShowing students in the degree program: " << program <<endl;
+
+	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
+		DegreeProgram studentProgram;
+		studentProgram = classRosterArray[i]->GetstudentProgram();
+		if (studentProgram == degreeProgram) {
+			classRosterArray[i]->printID();
+			std::cout << "\t";
+
+			classRosterArray[i]->printFName();
+			std::cout << "\t";
+
+			classRosterArray[i]->printLName();
+			std::cout << "\t";
+
+			classRosterArray[i]->printAge();
+			std::cout << "\t";
+
+			classRosterArray[i]->printDays();
+			std::cout << "\t";
+
+			classRosterArray[i]->printProgram();
+
+			std::cout << std::endl;
+		}
+	}
 };
 
 DegreeProgram conversion(const string& str) {
