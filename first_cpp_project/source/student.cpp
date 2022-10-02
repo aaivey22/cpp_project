@@ -2,7 +2,7 @@
 using namespace std;
 
 Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram)
-{ //constructor
+{ // constructor
 	SetID(studentID);
 	SetFirstName(firstName);
 	SetLastName(lastName);
@@ -11,6 +11,8 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 	SetstudentAge(age);
 	SetDays(daysInCourse1, daysInCourse2, daysInCourse3);
 };
+
+// destructor
 Student::~Student() {
 
 };

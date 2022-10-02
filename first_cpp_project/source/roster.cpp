@@ -4,31 +4,37 @@
 #include<vector>
 using namespace std;
 
-DegreeProgram conversion(const string& str);
+// declaration for function to return enum value
+DegreeProgram conversion(const string& str); 
 
+// constructor
 Roster::Roster() {};
+
+// destructor
 Roster::~Roster() {};
 
+// adds a new student object to the class roster array
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram){
 	classRosterArray[arrayIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeprogram);
 	++arrayIndex;
 };
 
+// parses student data and calls the add function
 void Roster::parse(const string studentData) {
 	vector<string> listOfWords;
 		string parsedWord;
 		string parsed = "";
 		for (int i = 0; i < studentData.size(); i++) {
-			if (studentData[i] != ',') {
+			if (studentData[i] != ',') { // checks if current character is not a delimeter of ','
 				parsed += studentData[i];
-				if (i == (studentData.size() - 1))
+				if (i == (studentData.size() - 1)) // checking the byte size of string studentData
 				{
 					parsedWord = parsed;
-					listOfWords.push_back(parsedWord);
+					listOfWords.push_back(parsedWord); // adds it to the vector if it's at the end of the string
 					parsed = "";
 				}
 			}
-			else {
+			else { // if the current char is a comma, add the parsed word to the vector
 				parsedWord = parsed;
 				listOfWords.push_back(parsedWord);
 				parsed = "";
@@ -37,7 +43,9 @@ void Roster::parse(const string studentData) {
 
 		for (int i = 0; i < 1; i++)
 		{
+			// get DegreeProgram enum from string in listOfWords
 			DegreeProgram degreeprogram = conversion(listOfWords[(i * 9) + 8]);
+			// add function
 			add(
 				listOfWords[i * 9],
 				listOfWords[(i * 9) + 1],
@@ -51,6 +59,7 @@ void Roster::parse(const string studentData) {
 		}
 };
 
+// removes student from array based on student ID
 void Roster::remove(string studentID){
 	bool foundID = false;
 	int arraySize = sizeof(classRosterArray) / sizeof(classRosterArray[0]);
@@ -70,9 +79,10 @@ void Roster::remove(string studentID){
 	}
 };
 
+// prints out the content of the students in the classRosterArray
 void Roster::printAll(){
 	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
-		if (classRosterArray[i] != nullptr) {
+		if (classRosterArray[i] != nullptr) { // excludes indicies that are null pointers
 			classRosterArray[i]->printID();
 			std::cout << "\t";
 
@@ -95,6 +105,7 @@ void Roster::printAll(){
 	}
 };
 
+// prints the average days in course based on the student ID
 void Roster::printAverageDaysInCourse(string studentID){
 	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
 		if (studentID == classRosterArray[i]->GetID()) {
@@ -106,10 +117,10 @@ void Roster::printAverageDaysInCourse(string studentID){
 
 		}
 	}
-
 };
 
-void Roster::printInvalidEmails() {
+// prints a list of invalid emails that contain errors
+void Roster::printInvalidEmails() { 
 	std::cout << "\nDisplaying invalid emails:\n\n";
 
 	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
@@ -134,6 +145,7 @@ void Roster::printInvalidEmails() {
 	}
 };
 
+// prints a list of students with the provided degree program
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
 {
 	string program;
@@ -177,7 +189,8 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
 	}
 };
 
-DegreeProgram conversion(const string& str) {
+// function to return enum value
+DegreeProgram conversion(const string& str) { 
 	if (str == "SECURITY") return SECURITY;
 	if (str == "NETWORK") return NETWORK;
 	if (str == "SOFTWARE") return SOFTWARE;

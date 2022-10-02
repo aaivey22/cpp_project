@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// main function that fires when program starts
 int main() {
 	std::cout << "C867-Scripting & Programming: Applications\nLanguage: C++\nStudent ID: 001044088\nName: Angela Ivey\n" << std::endl;
 
@@ -44,7 +45,8 @@ int main() {
 	classRoster.printAll();
 	std::cout << "\nRemoving A3 again" << std::endl;
 	classRoster.remove("A3");
+	classRoster.~Roster();
 	std::cout << "DONE." << std::endl;
 
-	return 0;
+	return 0; // return success!
 }

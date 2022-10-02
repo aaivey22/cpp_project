@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Roster class containing functions to manipulate class roster array
 class Roster {
 public:
 	Roster();
@@ -18,8 +19,5 @@ public:
 	class Student* classRosterArray[5];
 
 private:
-
 	int arrayIndex = 0;
-	//class Student student;
-
 };
