@@ -22,6 +22,8 @@ int main() {
 		classRoster.parse(studentData[i]);
 	};
 
+	std::cout << "Displaying all students:\n" << std::endl;
+
 	classRoster.printAll();
 	classRoster.printInvalidEmails();
 
@@ -32,5 +34,17 @@ int main() {
 	};
 
 	classRoster.printByDegreeProgram(SOFTWARE);
+
+	std::cout << std::endl;
+
+	classRoster.remove("A3");
+
+	std::cout << std::endl;
+
+	classRoster.printAll();
+	std::cout << "\nRemoving A3 again" << std::endl;
+	classRoster.remove("A3");
+	std::cout << "DONE." << std::endl;
+
 	return 0;
 }

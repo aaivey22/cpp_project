@@ -51,29 +51,47 @@ void Roster::parse(const string studentData) {
 		}
 };
 
-void Roster::remove(string studentID){};
-void Roster::printAll(){
-	std::cout << "Displaying all students:\n" << std::endl;
+void Roster::remove(string studentID){
+	bool foundID = false;
+	int arraySize = sizeof(classRosterArray) / sizeof(classRosterArray[0]);
 	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
-		classRosterArray[i]->printID();
-		std::cout << "\t";
+		if (classRosterArray[i] != nullptr) {
+			if (studentID == classRosterArray[i]->GetID()) {
+				classRosterArray[i] = nullptr;
+				foundID = true;
+			};
+		};
+	};
+	if (foundID) {
+		std::cout << "Removing " << studentID <<":" << std::endl;
+	}
+	else {
+		std::cout << "The student with the ID: " << studentID << " was not found." << std::endl;
+	}
+};
 
-		classRosterArray[i]->printFName();
-		std::cout << "\t";
+void Roster::printAll(){
+	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
+		if (classRosterArray[i] != nullptr) {
+			classRosterArray[i]->printID();
+			std::cout << "\t";
 
-		classRosterArray[i]->printLName();
-		std::cout << "\t";
+			classRosterArray[i]->printFName();
+			std::cout << "\t";
 
-		classRosterArray[i]->printAge();
-		std::cout << "\t";
+			classRosterArray[i]->printLName();
+			std::cout << "\t";
 
-		classRosterArray[i]->printDays();
-		std::cout << "\t";
+			classRosterArray[i]->printAge();
+			std::cout << "\t";
 
-		classRosterArray[i]->printProgram();
+			classRosterArray[i]->printDays();
+			std::cout << "\t";
 
-		std::cout << std::endl;
+			classRosterArray[i]->printProgram();
 
+			std::cout << std::endl;
+		}
 	}
 };
 
@@ -131,7 +149,7 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
 		program = "NETWORK";
 	};
 
-	std::cout << "\nShowing students in the degree program: " << program <<endl;
+	std::cout << "\nShowing students in the degree program: " << program <<endl << endl;
 
 	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
 		DegreeProgram studentProgram;
