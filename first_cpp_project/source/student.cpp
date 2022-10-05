@@ -105,3 +105,24 @@ void Student::printDays() {
 	this->GetDays(Day1, Day2, Day3);
 	std::cout <<"{"<< Day1 << ", " << Day2 <<", "<< Day3<<"}";
 };
+
+void Student::print() {
+	printID();
+	std::cout << "\t";
+
+	printFName();
+	std::cout << "\t";
+
+	printLName();
+	std::cout << "\t";
+
+	printAge();
+	std::cout << "\t";
+
+	printDays();
+	std::cout << "\t";
+
+	printProgram();
+
+	std::cout << std::endl;
+};

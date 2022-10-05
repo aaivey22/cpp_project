@@ -79,28 +79,11 @@ void Roster::remove(string studentID){
 	}
 };
 
-// prints out the content of the students in the classRosterArray
+// prints out the content of the student objects in the classRosterArray
 void Roster::printAll(){
 	for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[0]); i++) {
 		if (classRosterArray[i] != nullptr) { // excludes indicies that are null pointers
-			classRosterArray[i]->printID();
-			std::cout << "\t";
-
-			classRosterArray[i]->printFName();
-			std::cout << "\t";
-
-			classRosterArray[i]->printLName();
-			std::cout << "\t";
-
-			classRosterArray[i]->printAge();
-			std::cout << "\t";
-
-			classRosterArray[i]->printDays();
-			std::cout << "\t";
-
-			classRosterArray[i]->printProgram();
-
-			std::cout << std::endl;
+			classRosterArray[i]->print();
 		}
 	}
 };
@@ -167,24 +150,7 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
 		DegreeProgram studentProgram;
 		studentProgram = classRosterArray[i]->GetstudentProgram();
 		if (studentProgram == degreeProgram) {
-			classRosterArray[i]->printID();
-			std::cout << "\t";
-
-			classRosterArray[i]->printFName();
-			std::cout << "\t";
-
-			classRosterArray[i]->printLName();
-			std::cout << "\t";
-
-			classRosterArray[i]->printAge();
-			std::cout << "\t";
-
-			classRosterArray[i]->printDays();
-			std::cout << "\t";
-
-			classRosterArray[i]->printProgram();
-
-			std::cout << std::endl;
+			classRosterArray[i]->print();
 		}
 	}
 };

@@ -1,6 +1,3 @@
-﻿  main.cpp
-  roster.cpp
-  student.cpp
-  Generating Code...
-C:\Users\aaive\Documents\Code\CPP\first_cpp_project\first_cpp_project\source\roster.cpp(197): warning C4715: 'conversion': not all control paths return a value
+﻿  roster.cpp
+C:\Users\aaive\Documents\Code\CPP\first_cpp_project\first_cpp_project\source\roster.cpp(163): warning C4715: 'conversion': not all control paths return a value
   first_cpp_project.vcxproj -> C:\Users\aaive\Documents\Code\CPP\first_cpp_project\x64\Debug\first_cpp_project.exe

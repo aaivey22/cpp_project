@@ -38,6 +38,7 @@ public:
 	void GetDays(int& daysInCourse1, int& daysInCourse2, int& daysInCourse3); // & is a pointer that allows you to  retrieve AND modify the stored value
 	void printDays(); // prints student number of days in course
 
+	void print(); // prints the current object
 
 
 private:
